@@ -1,0 +1,83 @@
+<% layout('layouts/boilerplate') %>
+
+<%- include('../partials/navbar') %>
+<div class="row">
+    
+    <div class="col-6 mx-auto">
+        <form class="needs-validation" action="/products" method="post" novalidate>
+            <div class="mb-3">
+                <label for="naam">Name:</label>
+                <input type="text" class="form-control"  name="name" id="naam"  placeholder="Name of Your Product" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter a valid name.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="img">Image:</label>
+                <input type="text" class="form-control"  name="img" id="img"  placeholder="Image url of Your Product" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter a Image.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="paisa">Price:</label>
+                <input type="number" class="form-control"  name="price" id="paisa"  placeholder="Price of Your Product" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter a valid Price.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="desc">Description:</label>
+                <textarea name="description" id="desc" rows="5" placeholder="description of Your Product"></textarea>
+            </div>
+
+            <button class="btn btn-sm btn-success" type="submit">
+                Add Product
+            </button>
+
+        </form>
+    </div>
+
+</div>
+
+
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+    </script>
+
+   
+</body>
+
+</html>

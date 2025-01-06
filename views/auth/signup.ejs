@@ -1,0 +1,54 @@
+<% layout('layouts/boilerplate') %>
+
+<%- include('../partials/navbar') %>
+
+
+<div class="row">
+
+
+    <div class="col-md-6 mx-auto">
+      <%- include('../partials/flash') %>
+      <h1 class="display-6 class=">
+        Sign Up
+      </h1>
+
+      <form action="/register" method="POST">
+
+        <div class="mb-3">
+            <label class="foem-label" for="username"> Username:</label>
+            <input type="text" name="username" id="username"  placeholder="Username" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="foem-label" for="email"> Email:</label>
+          <input type="email" name="email" id="email"  placeholder="Email" class="form-control">
+        </div>
+
+
+        <div class="mb-3">
+          <p class="mb-2">Want to Register as ?</p>
+          <div class="mx-2">
+            <label class="form-label" for="seller">Seller: </label>
+            <input class="form-check-input" type="radio" name="role" id="seller" value="seller" required>
+          </div>
+
+          <div class="mx-2">
+            <label class="form-label" for="customer">Customer: </label>
+            <input class="form-check-input" type="radio" name="role" id="customer" value="customer" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="foem-label" for="password"> Password:</label>
+          <input type="password" name="password" id="password"  placeholder="Password" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-sm btn-success">Sign Up</button>
+        <p class="fw-light mt-2">Already have an Account ,<a href="/login">Login</a> </p>
+
+
+      </form>
+
+    </div>
+
+</div>
